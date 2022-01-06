@@ -30,7 +30,7 @@ def image_to_feature_vector(image, size=(128, 128)):
 
 # grab the list of images that we'll be describing
 print("[INFO] describing images...")
-imagePaths = list(paths.list_images("datasets/data"))
+imagePaths = list(paths.list_images("data"))
 # initialize the raw pixel intensities matrix, the features matrix,
 # and labels list
 rawImages = []
@@ -89,7 +89,7 @@ print(set(labels) , "unique labels")
 
 # labels = le.transform(labels)
 # print(labels[:20])
-# {"lettre": 5 , "carte":0,"cv" : 3 , "credits" : 2 ,"cheques" : 1 , "facture" : 4 }
+# {"lettre": 5 , "carte":0,"cv" : 3 , "credits" : 2 ,"cheque" : 1 , "facture" : 4 }
 rawImages = np.array(rawImages)
 labels = np.array(labels)
 print("[INFO] pixels matrix: {:.2f}MB".format(
