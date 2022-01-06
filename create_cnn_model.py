@@ -30,7 +30,7 @@ def image_to_feature_vector(image, size=(128, 128)):
 
 # grab the list of images that we'll be describing
 print("[INFO] describing images...")
-imagePaths = list(paths.list_images("data"))
+imagePaths = list(paths.list_images("cnn_data/full_cnn_data/"))
 # initialize the raw pixel intensities matrix, the features matrix,
 # and labels list
 rawImages = []
@@ -72,7 +72,7 @@ for (i, imagePath) in enumerate(imagePaths):
 # show some information on the memory consumed by the raw images
 # matrix and features matrix
 new_labels = []
-class_label = {"credit" :0 , "cv" : 1 ,"facture" : 2 , "lettre" : 3, "cheques":4   }
+class_label = {"bon" :0 , "devis" : 1 ,"facture" : 2 , "lettre" : 3, "cheque":4   }
 
 for label in labels:
 	new_labels.append(class_label[label]) 
@@ -89,7 +89,7 @@ print(set(labels) , "unique labels")
 
 # labels = le.transform(labels)
 # print(labels[:20])
-# {"lettre": 5 , "carte":0,"cv" : 3 , "credits" : 2 ,"cheque" : 1 , "facture" : 4 }
+# {"lettre": 5 , "carte":0,"cv" : 3 , "credits" : 2 ,"cheques" : 1 , "facture" : 4 }
 rawImages = np.array(rawImages)
 labels = np.array(labels)
 print("[INFO] pixels matrix: {:.2f}MB".format(
@@ -154,7 +154,7 @@ model_checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
     monitor='val_accuracy',
     mode='max',
    )
-model.fit(trainRI, trainRL, batch_size=64, epochs=6, validation_data=(testRI, testRL),callbacks=[model_checkpoint_callback],workers=2)
+model.fit(trainRI, trainRL, batch_size=64, epochs=8, validation_data=(testRI, testRL),callbacks=[model_checkpoint_callback],workers=6)
 model.save('cnn_classification_model.h5')
 # model = KNeighborsClassifier(n_neighbors=2,
 # 	n_jobs=2)
