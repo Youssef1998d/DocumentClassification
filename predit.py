@@ -16,24 +16,15 @@ import tensorflow as tf
 # to calculate accuracy
 from sklearn.metrics import accuracy_score
 
-
-BASE_DIR = Path(__file__).resolve().parent
-
-def image_to_feature_vector(image, size=(64, 64)):
-	# resize the image to a fixed size, then flatten the image into
-	# a list of raw pixel intensities
-	return cv2.resize(image, size)
-
 model = load_model("cnn_classification_model.h5")
 model.summary()
 
 
 
-image = cv2.imread("cheque771.png")
+image = cv2.imread(input("Absolute path please : "))
 
 
 image =  cv2.resize(image, (128, 128))
-print(image.shape,"shape resize128")
 
 image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         
@@ -41,19 +32,10 @@ image = cv2.threshold(
                 image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1]
 				
 
-# image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-        
-# image = cv2.threshold(
-#                 image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1]
-# image = image.reshape( image.shape + (1,) ) 
-# print(image.shape,"shape binairization")
-
 image = np.array(image)
 image = image.astype('float32')
 image /= 255
-print(image.shape,"shape nparray255")
 image = image.reshape((1,) + image.shape) 
-print(image.shape,"shape nparray255")
 
 class_label = {"0" :"bon" , "1" : "devis" ,"2" : "facture" , "3" : "lettre", "4":"cheque"   }
 
