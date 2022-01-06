@@ -31,7 +31,7 @@ The model is built with an input layer (convolution layer), 11 hidden layers and
 The following instructions should be implemented in this order :
 - Clone the repository by executing `git clone https://github.com/Youssef1998d/DocumentClassification.git`.
 - In the shell (or Windows/MacOS) the following command should be executed `pip install -r requirements.txt` (of course within the folder path).
-- Download the zip file in this link `https://drive.google.com/file/d/1taTW475vHMYLN6_HlypOOsahhByKUABP/view?usp=sharing`, put the full_cnn_folder with same folder as `create_cnn_model.py` .
+- Download the zip file in this link `https://drive.google.com/file/d/1xDau8whA-EVJkZ92wvEgwmIJPPw8QnjG/view?usp=sharing`, put the full_cnn_folder with same folder as `create_cnn_model.py` .
 - To generate the `cnn_classification_model`, run `python3 create_cnn_model.py` in shell or `python create_cnn_model.py` in Windows/MacOS.
 
 
