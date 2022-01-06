@@ -12,7 +12,7 @@ I have 3792 examples of each category, they must be equal in quantity to keep th
 
 Each example from the data contains image resized to `128x128` with colors black and white using binairzation technique, its values are divided by 255 so each image contains values from 0 to 1 with type float. 
 
-The training example also contains a label which can be (facture, devis, bon (bon de commande), cheque and lettre), I converted the string label to number like {"0": "bon", "1": "devis", "2": "facture", "3": "lettre", "4": "cheque" }. I also applied on hot encoding on each label so that each label becomes an array of binary.
+The training example also contains a label which can be (facture, devis, bon (bon de commande), cheque and lettre), I converted the string label to number like `{"0": "bon", "1": "devis", "2": "facture", "3": "lettre", "4": "cheque" }`. I also applied on hot encoding on each label so that each label becomes an array of binary.
 example : Label => "facture" =>3 => [0,1,1,0,1] 
 
 I divided my data by 0.75 for the training set from whom our model will learn patterns and 0.25 for the test set where our model will evaluate its learning process. 
