@@ -37,7 +37,7 @@ image = image.astype('float32')
 image /= 255
 image = image.reshape((1,) + image.shape) 
 
-class_label = {"0" :"bon" , "1" : "devis" ,"2" : "facture" , "3" : "lettre", "4":"cheque"   }
+class_label = {"0" :"bon", "1" : "devis" ,"2" : "facture" , "3" : "lettre", "4":"cheque"   }
 
 
 print(class_label[str(np.argmax(model.predict(image)[0], axis=None , out = None) )], "prediction")
