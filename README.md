@@ -28,11 +28,11 @@ The model is built with an input layer (convolution layer), 11 hidden layers and
   - The regularization will be dropout  
 
 ## Usage
-
-1 - Clone the repository by executing `git clone https://github.com/Youssef1998d/DocumentClassification.git` \n
-2 - Download the zip file named `data.zip`, extract it in this folder. \n
-3 - To generate the `cnn_classification_model`, run `python3 create_cnn_model.py` in shell or `python create_cnn_model.py` in Windows/MacOS. \n
-4 - In the shell (or Windows/MacOS) the following command should be executed `pip install -r requirements.txt` (of course within the folder path). \n
+The following instructions should be implemented in this order :
+- Clone the repository by executing `git clone https://github.com/Youssef1998d/DocumentClassification.git`.
+- Download the zip file named `data.zip`, extract it in this folder.
+- To generate the `cnn_classification_model`, run `python3 create_cnn_model.py` in shell or `python create_cnn_model.py` in Windows/MacOS.
+- In the shell (or Windows/MacOS) the following command should be executed `pip install -r requirements.txt` (of course within the folder path).
 
 ### Predict a document type
 The script execution in shell `python3 predit.py` (or in Windows `python3 predit.py`) then the user should input the absolute path of the image, then the output will be printed as the class of the document.
