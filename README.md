@@ -1,5 +1,8 @@
 # DocumentClassification
 
+This script can be used for classification of document : it accepts an image and give its class.
+
+
 ## Data preparation 
 
 ### Data collection
